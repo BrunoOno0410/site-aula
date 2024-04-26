@@ -1,6 +1,7 @@
 import React from "react";
 import { LandingPage } from "./pages/Home/Home";
 import { LoginPage } from "./pages/Login/Login";
+import "../output.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
