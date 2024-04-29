@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "../../components/navbar";
+import { Footer } from "../../components/footer";
 
 export const LandingPage = () => {
   return (
@@ -10,6 +11,7 @@ export const LandingPage = () => {
         <p>Aprenda a ler e escrever de forma divertida e interativa.</p>
         <button>Inscreva-se Agora</button>
       </div>
+      <Footer />
     </>
   );
 };
