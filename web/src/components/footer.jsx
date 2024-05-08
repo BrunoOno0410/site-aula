@@ -6,7 +6,7 @@ export const Footer = () => {
     <div className="border-t border-blue-gray-50">
       <footer className="flex w-auto flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 py-6 text-center md:justify-between mx-10">
         <Typography color="blue-gray" className="font-normal">
-          &copy; 2024 Tecnus Saturn
+          &copy; 2024 Tecnus Saturn - Enactus FACAMP
         </Typography>
         <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
           <li>
