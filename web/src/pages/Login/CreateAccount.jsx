@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar } from "../../components/navbar";
 import { Footer } from "../../components/footer";
 
-export const LoginPage = () => {
+export const CreateAccountPage = () => {
   return (
     <div>
       <Navbar />
@@ -15,7 +15,7 @@ export const LoginPage = () => {
               alt="Your Company"
             />
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
-              Entre na sua conta
+              Crie sua conta
             </h2>
           </div>
 
@@ -41,6 +41,25 @@ export const LoginPage = () => {
               </div>
 
               <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium leading-6 text-white"
+                >
+                  Nome Completo
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    autoComplete="name"
+                    required
+                    className="block pl-2 pr-2 w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+              </div>
+
+              <div>
                 <div className="flex items-center justify-between">
                   <label
                     htmlFor="password"
@@ -48,14 +67,6 @@ export const LoginPage = () => {
                   >
                     Senha
                   </label>
-                  <div className="text-sm">
-                    <a
-                      href="#"
-                      className="font-semibold text-indigo-600 hover:text-indigo-500"
-                    >
-                      Esqueci minha senha
-                    </a>
-                  </div>
                 </div>
                 <div className="mt-2">
                   <input
@@ -74,20 +85,10 @@ export const LoginPage = () => {
                   type="submit"
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Entrar
+                  Criar
                 </button>
               </div>
             </form>
-
-            <p className="mt-10 text-center text-sm text-gray-400">
-              Não tem uma conta ainda?{" "}
-              <a
-                href="#"
-                className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-              >
-                Crie uma agora
-              </a>
-            </p>
           </div>
         </div>
       </div>
@@ -95,3 +96,18 @@ export const LoginPage = () => {
     </div>
   );
 };
+
+/*
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+*/
