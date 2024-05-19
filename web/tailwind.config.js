@@ -3,7 +3,11 @@
 export default {
   content: ["./src/**/*.{js,jsx}", "./site-aula/**/*.html"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        onix: "#101010",
+      },
+    },
   },
   plugins: [],
 };
