@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 export const Navbar = () => {
+  const [isLoggedIN, setIsLoggedIN] = useState(false);
   const [isProfileOpen, setProfileOpen] = useState(false);
   const [isHamburgerOpen, setHamburgerOpen] = useState(false);
   const node = useRef();
@@ -83,6 +84,7 @@ export const Navbar = () => {
               </svg>
             </button>
           </div>
+
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
               <a className="font-extrabold text-white">
@@ -111,11 +113,11 @@ export const Navbar = () => {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <p className="text-white">Olá, visitante</p>
+            <p className="text-gray-300">Olá, visitante</p>
             {/* Remover "Olá visitante" para modelo mobile*/}
             {/* Profile dropdown */}
             <div className="relative ml-3">
-              <div>
+              <div className="flex">
                 <button
                   type="button"
                   className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -132,6 +134,12 @@ export const Navbar = () => {
                     alt=""
                   />
                 </button>
+                {/* Login button shown if user is not logged in */}
+                {!isLoggedIN && (
+                  <button className="btn-login text-gray-300 rounded-lg px-4 hover:bg-gray-700 mx-4 border border-gray-700">
+                    Login
+                  </button>
+                )}
               </div>
 
               {/*
@@ -186,7 +194,6 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-
       {/* Mobile menu, show/hide based on menu state.*/}
       <div className={`${isHamburgerOpen ? "block" : "hidden"} sm:hidden`}>
         <div className="space-y-1 px-2 pb-3 pt-2">

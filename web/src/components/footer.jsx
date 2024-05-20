@@ -3,7 +3,7 @@ import { Typography } from "@material-tailwind/react";
 
 export const Footer = () => {
   return (
-    <div className="border-t border-blue-gray-50">
+    <div className="bg-onix text-gray-300">
       <footer className="flex w-auto flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 py-6 text-center md:justify-between mx-10">
         <Typography color="blue-gray" className="font-normal">
           &copy; 2024 Tecnus Saturn - Enactus FACAMP

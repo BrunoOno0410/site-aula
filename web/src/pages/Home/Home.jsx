@@ -13,7 +13,7 @@ export const LandingPage = () => {
     <div>
       <Navbar />
       <div className="h-full">
-        <div className="relative isolate overflow-hidden bg-gray-900 h-dvh">
+        <div className="relative isolate overflow-hidden bg-onix h-dvh">
           <img
             src="..\src\assets\tech pattern.png"
             alt="tech pattern"
@@ -46,7 +46,7 @@ export const LandingPage = () => {
           <div className="flex flex-col justify-center items-center h-full">
             <div className="flex">
               <div className="basis-2/3">
-                <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                <h2 className="text-4xl font-bold tracking-tight text-gray-300 sm:text-6xl">
                   Quem somos nós?
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-gray-300">
