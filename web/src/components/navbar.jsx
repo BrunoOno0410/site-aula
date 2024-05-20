@@ -96,20 +96,22 @@ export const Navbar = () => {
                 />
               </Link>
             </div>
-            <div className="hidden sm:block sm:ml-6">
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Cursos
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Sobre nós
-                </a>
+            <div className="flex items-center">
+              <div className="sm:block sm:ml-6">
+                <div className="flex">
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Cursos
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Sobre nós
+                  </a>
+                </div>
               </div>
             </div>
           </div>

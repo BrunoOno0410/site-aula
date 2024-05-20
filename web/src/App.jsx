@@ -6,6 +6,8 @@ import "../output.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { CreateAccountPage } from "./pages/Login/CreateAccount";
 import { ForgotPasswordPage } from "./pages/Login/ForgotPassword";
+import { CoursesList } from "./pages/Aulas/CoursesList";
+import { ClassesModel } from "./pages/Aulas/cursos/ClassesModel";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,15 @@ const router = createBrowserRouter([
   {
     path: "/forgot-password",
     element: <ForgotPasswordPage />,
+  },
+  {
+    path: "/aulas",
+    element: <CoursesList />,
+  },
+  {
+    path: "/modelo",
+    // path: "/cursos/:courseId/lessons/:lessonId",
+    element: <ClassesModel />,
   },
 ]);
 
