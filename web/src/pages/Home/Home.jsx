@@ -45,11 +45,11 @@ export const LandingPage = () => {
           </div> */}
           <div className="flex flex-col justify-center items-center h-full">
             <div className="flex">
-              <div className="basis-2/3">
-                <h2 className="text-4xl font-bold tracking-tight text-gray-300 sm:text-6xl">
+              <div className="basis-3/5 mx-40">
+                <h2 className="text-4xl font-bold tracking-tight text-gray-300 sm:text-6xl text-center">
                   Quem somos nós?
                 </h2>
-                <p className="mt-6 text-lg leading-8 text-gray-300">
+                <p className="mt-4 text-lg leading-8 text-gray-300 text-justify">
                   Nosso compromisso com a educação de qualidade é refletido
                   neste projeto, que busca promover o letramento digital em
                   regiões vulneráveis. Capacitamos indivíduos através de
@@ -58,18 +58,20 @@ export const LandingPage = () => {
                   promovendo um crescimento profissional significativo.
                 </p>
                 <div className="">
-                  <div className="gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white">
-                    <button>Saiba mais</button>
+                  <div className="gap-x-8 gap-y-6 text-base font-semibold leading-7 text-gray-300 flex justify-center">
+                    <button className="mt-4 border border-gray-700 rounded-lg px-4 hover:bg-gray-700">
+                      Saiba mais
+                    </button>
                   </div>
                 </div>
               </div>
-              <div className="basis-1/3 flex flex-col items-center justify-center h-full">
-                <img src="..\src\assets\LOGOVETO.svg" className=" " />
+              <div className="basis-2/5 flex flex-col items-start justify-center h-full">
+                <img src="..\src\assets\LOGOVETO.svg" className="h-48 w-auto" />
               </div>
             </div>
           </div>
         </div>
-        <div className="bg-white py-24 sm:py-32">
+        <div className="bg-gray-200 py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
               {stats.map((stat) => (
@@ -88,17 +90,12 @@ export const LandingPage = () => {
             </dl>
           </div>
         </div>
-        <section className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
+        <section className="relative isolate overflow-hidden bg-onix px-6 py-24 sm:py-32 lg:px-8">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),black)] opacity-20" />
-          <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-gray-800 shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
+          <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-onix shadow-xl shadow-indigo-600/10 ring-1 ring-gray-900 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
           <div className="mx-auto max-w-2xl lg:max-w-4xl">
-            <img
-              className="mx-auto h-12"
-              src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg"
-              alt=""
-            />
             <figure className="mt-10">
-              <blockquote className="text-center text-xl font-semibold leading-8 text-white sm:text-2xl sm:leading-9">
+              <blockquote className="text-center text-xl font-semibold leading-8 text-gray-300 sm:text-2xl sm:leading-9">
                 <p>
                   "Eu estava procurando uma maneira fácil de melhorar minhas
                   habilidades digitais quando encontrei o site de letramento
@@ -119,7 +116,9 @@ export const LandingPage = () => {
                   alt=""
                 />
                 <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-                  <div className="font-semibold text-white">Judith Black</div>
+                  <div className="font-semibold text-gray-300">
+                    Judith Black
+                  </div>
                   <svg
                     viewBox="0 0 2 2"
                     width={3}

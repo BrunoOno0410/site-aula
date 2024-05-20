@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [isLoggedIN, setIsLoggedIN] = useState(false);
@@ -136,9 +137,12 @@ export const Navbar = () => {
                 </button>
                 {/* Login button shown if user is not logged in */}
                 {!isLoggedIN && (
-                  <button className="btn-login text-gray-300 rounded-lg px-4 hover:bg-gray-700 mx-4 border border-gray-700">
+                  <Link
+                    to="/login"
+                    className="btn-login text-gray-300 rounded-lg px-4 hover:bg-gray-700 mx-4 border border-gray-700"
+                  >
                     Login
-                  </button>
+                  </Link>
                 )}
               </div>
 
