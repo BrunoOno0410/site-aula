@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar } from "../../components/navbar";
 import { Footer } from "../../components/footer";
+import { Link } from "react-router-dom";
 
 export const LoginPage = () => {
   return (
@@ -49,12 +50,12 @@ export const LoginPage = () => {
                     Senha
                   </label>
                   <div className="text-sm">
-                    <a
-                      href="#"
+                    <Link
+                      to="/forgot-password"
                       className="font-semibold text-indigo-600 hover:text-indigo-500"
                     >
                       Esqueci minha senha
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="mt-2">
@@ -82,12 +83,12 @@ export const LoginPage = () => {
 
             <p className="mt-10 text-center text-sm text-gray-400">
               Não tem uma conta ainda?{" "}
-              <a
-                href="#"
+              <Link
+                to="/create-account"
                 className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
               >
                 Crie uma agora
-              </a>
+              </Link>
             </p>
           </div>
         </div>

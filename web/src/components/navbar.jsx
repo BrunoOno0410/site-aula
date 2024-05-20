@@ -88,13 +88,13 @@ export const Navbar = () => {
 
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <a className="font-extrabold text-white">
+              <Link to="/">
                 <img
                   className="h-6 w-auto"
                   src="..\src\assets\TecnusSaturn.png"
                   alt="Tecnus Logo"
                 />
-              </a>
+              </Link>
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
