@@ -7,6 +7,8 @@ export const CoursesList = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [newCourseTitle, setNewCourseTitle] = useState("");
+  const [editingCourseId, setEditingCourseId] = useState(null);
+  const [editingCourseTitle, setEditingCourseTitle] = useState("");
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -46,6 +48,32 @@ export const CoursesList = () => {
     );
   };
 
+  const handleEditCourse = (course) => {
+    setEditingCourseId(course.id);
+    setEditingCourseTitle(course.title);
+  };
+
+  const handleSaveEditCourse = async () => {
+    const response = await fetch(
+      `http://localhost:5000/class-modules/${editingCourseId}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ title: editingCourseTitle, classes: [] }),
+      }
+    );
+    const data = await response.json();
+    setCourses((prevCourses) =>
+      prevCourses.map((course) =>
+        course.id === editingCourseId ? data : course
+      )
+    );
+    setEditingCourseId(null);
+    setEditingCourseTitle("");
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -62,16 +90,44 @@ export const CoursesList = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {courses.map((course) => (
             <div key={course.id} className="bg-gray-50 p-4 rounded shadow">
-              <h2 className="text-lg font-bold">{course.title}</h2>
-              <Link to={`/aulas/${course.id}`} className="text-blue-500">
+              {editingCourseId === course.id ? (
+                <div>
+                  <input
+                    type="text"
+                    value={editingCourseTitle}
+                    onChange={(e) => setEditingCourseTitle(e.target.value)}
+                    className="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                  />
+                  <button
+                    onClick={handleSaveEditCourse}
+                    className="mt-2 bg-green-500 text-white px-4 py-1 rounded"
+                  >
+                    Salvar
+                  </button>
+                </div>
+              ) : (
+                <div>
+                  <h2 className="text-lg font-bold">{course.title}</h2>
+                  <button
+                    onClick={() => handleEditCourse(course)}
+                    className="mr-2 bg-yellow-500 text-white px-2 py-1 rounded"
+                  >
+                    Editar
+                  </button>
+                  <button
+                    onClick={() => handleDeleteCourse(course.id)}
+                    className="bg-red-500 text-white px-2 py-1 rounded"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              )}
+              <Link
+                to={`/aulas/${course.id}`}
+                className="text-blue-500 mt-2 block"
+              >
                 Ver aulas
               </Link>
-              <button
-                onClick={() => handleDeleteCourse(course.id)}
-                className="ml-2 bg-red-500 text-white px-2 py-1 rounded"
-              >
-                Excluir
-              </button>
             </div>
           ))}
           <div className="bg-white p-4 rounded shadow">
