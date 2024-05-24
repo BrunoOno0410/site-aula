@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar } from "../../components/navbar";
 import { Footer } from "../../components/footer";
+import axios from "axios";
 
 export const CreateAccountPage = () => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:5000/users", {
+        email,
+        name,
+        password,
+      });
+      console.log(response.data);
+      alert("Conta criada com sucesso!");
+    } catch (error) {
+      console.error(error);
+      alert("Erro ao criar conta. Por favor, tente novamente.");
+    }
+  };
+
   return (
     <div>
       <Navbar />
@@ -20,7 +41,7 @@ export const CreateAccountPage = () => {
           </div>
 
           <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form className="space-y-6" action="#" method="POST">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="email"
@@ -37,13 +58,15 @@ export const CreateAccountPage = () => {
                     required
                     placeholder="Digite seu e-mail"
                     className="block pl-2 pr-2 w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
               </div>
 
               <div>
                 <label
-                  htmlFor="email"
+                  htmlFor="name"
                   className="block text-sm font-medium leading-6 text-gray-300"
                 >
                   Nome Completo
@@ -57,6 +80,8 @@ export const CreateAccountPage = () => {
                     required
                     placeholder="Digite seu nome"
                     className="block pl-2 pr-2 w-full rounded-md border-0 py-1.5 text-gray-300 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
               </div>
@@ -79,6 +104,8 @@ export const CreateAccountPage = () => {
                     required
                     placeholder="Digite sua senha atual"
                     className="block pl-2 pr-2 w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
               </div>
@@ -99,18 +126,3 @@ export const CreateAccountPage = () => {
     </div>
   );
 };
-
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/

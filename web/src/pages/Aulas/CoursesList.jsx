@@ -10,7 +10,13 @@ export const CoursesList = () => {
       { id: 1, title: "Introdução à Programação" },
       { id: 2, title: "Estruturas de Controle" },
       { id: 3, title: "Funções" },
-      // Adicione mais aulas aqui
+      { id: 4, title: "Arrays" },
+      { id: 5, title: "Objetos" },
+      { id: 6, title: "Classes" },
+      { id: 7, title: "Herança" },
+      { id: 8, title: "Polimorfismo" },
+      { id: 9, title: "Encapsulamento" },
+      { id: 10, title: "Interfaces" },
     ],
   };
 
