@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar } from "../../components/navbar";
 import { Footer } from "../../components/footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        // Armazene informações do usuário ou token, conforme necessário
+        navigate("/courses");
+      } else {
+        setError(data.error || "Login failed");
+      }
+    } catch (error) {
+      setError("An error occurred. Please try again.");
+    }
+  };
+
   return (
     <div>
       <Navbar />
@@ -20,7 +47,7 @@ export const LoginPage = () => {
             </h2>
           </div>
           <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form className="space-y-6" action="#" method="POST">
+            <form className="space-y-6" onSubmit={handleLogin}>
               <div>
                 <label
                   htmlFor="email"
@@ -37,6 +64,8 @@ export const LoginPage = () => {
                     required
                     placeholder="Digite seu e-mail"
                     className="block pl-2 pr-2 w-full rounded-md border-0 py-1.5 text-gray-300 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
               </div>
@@ -67,9 +96,13 @@ export const LoginPage = () => {
                     required
                     placeholder="Digite sua senha"
                     className="block pl-2 pr-2 w-full rounded-md border-0 py-1.5 text-gray-300 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
               </div>
+
+              {error && <div className="text-red-500 text-sm">{error}</div>}
 
               <div>
                 <button

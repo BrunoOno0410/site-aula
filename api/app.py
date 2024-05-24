@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, redirect, url_for
 from flask_pymongo import PyMongo
 from pydantic import BaseModel, Field, ValidationError, EmailStr
 from bson.objectid import ObjectId
@@ -152,6 +152,52 @@ def create_user():
     result = login_collection.insert_one(user_data)
     new_user = login_collection.find_one({"_id": result.inserted_id})
     return jsonify(user_helper(new_user).dict()), 201
+
+
+@app.route("/login", methods=["POST"])
+def login_user():
+    data = request.json
+    user = login_collection.find_one({"email": data["email"]})
+    if user and bcrypt.checkpw(data["password"].encode("utf-8"), user["password"]):
+        return jsonify(user_helper(user).dict()), 200
+    return jsonify({"error": "Invalid email or password"}), 401
+
+
+@app.route("/aulas", methods=["POST"])
+def create_aula():
+    try:
+        aula = Class(**request.json)
+    except ValidationError as e:
+        return jsonify(e.errors()), 400
+
+    result = aulas_collection.insert_one(aula.dict())
+    new_aula = aulas_collection.find_one({"_id": result.inserted_id})
+    return jsonify({"_id": str(new_aula["_id"]), **new_aula}), 201
+
+
+@app.route("/aulas/<aula_id>", methods=["PUT"])
+def update_aula(aula_id):
+    try:
+        aula = Class(**request.json)
+    except ValidationError as e:
+        return jsonify(e.errors()), 400
+
+    update_result = aulas_collection.update_one(
+        {"_id": ObjectId(aula_id)}, {"$set": aula.dict()}
+    )
+
+    if update_result.modified_count == 1:
+        updated_aula = aulas_collection.find_one({"_id": ObjectId(aula_id)})
+        return jsonify({"_id": str(updated_aula["_id"]), **updated_aula}), 200
+    return jsonify({"error": "Aula not found"}), 404
+
+
+@app.route("/aulas/<aula_id>", methods=["DELETE"])
+def delete_aula(aula_id):
+    delete_result = aulas_collection.delete_one({"_id": ObjectId(aula_id)})
+    if delete_result.deleted_count == 1:
+        return jsonify({"message": "Aula deleted"}), 200
+    return jsonify({"error": "Aula not found"}), 404
 
 
 if __name__ == "__main__":
