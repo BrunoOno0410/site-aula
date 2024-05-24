@@ -21,13 +21,13 @@ export const LoginPage = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        // Armazene informações do usuário ou token, conforme necessário
-        navigate("/courses");
+        // Armazenar informações do usuário ou token, conforme necessário
+        navigate("/aulas");
       } else {
-        setError(data.error || "Login failed");
+        setError(data.error || "Falha no login. Por favor, tente novamente.");
       }
     } catch (error) {
-      setError("An error occurred. Please try again.");
+      setError("Ocorreu um erro. Por favor, tente novamente.");
     }
   };
 
