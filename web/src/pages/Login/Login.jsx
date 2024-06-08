@@ -21,7 +21,6 @@ export const LoginPage = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        // Armazenar informações do usuário ou token, conforme necessário
         navigate("/aulas");
       } else {
         setError(data.error || "Falha no login. Por favor, tente novamente.");
@@ -32,15 +31,15 @@ export const LoginPage = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <div className="relative isolate h-screen bg-onix">
+      <div className="relative isolate flex-1 bg-onix flex items-center justify-center">
         <img
           src="..\src\assets\fundologin.png"
           alt="fundo login"
-          className="absolute inset-0 -z-10 h-screen w-full object-cover object-right md:object-center"
+          className="absolute inset-0 w-full h-full object-cover object-right md:object-center -z-10"
         />
-        <div className="flex h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-gray-300">
               Entre na sua conta

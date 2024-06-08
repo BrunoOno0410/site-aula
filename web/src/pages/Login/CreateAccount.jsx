@@ -25,9 +25,9 @@ export const CreateAccountPage = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <div className="relative isolate h-screen bg-onix">
+      <div className="relative isolate flex-1 bg-onix flex items-center justify-center">
         <img
           src="..\src\assets\fundologin.png"
           alt="fundo login"
