@@ -16,7 +16,7 @@ export const Footer = () => {
               color="blue-gray"
               className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
             >
-              About Us
+              Sobre Nós
             </Typography>
           </li>
           <li>
@@ -26,7 +26,7 @@ export const Footer = () => {
               color="blue-gray"
               className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
             >
-              License
+              Licença
             </Typography>
           </li>
           <li>
@@ -36,7 +36,7 @@ export const Footer = () => {
               color="blue-gray"
               className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
             >
-              Contribute
+              Contribua
             </Typography>
           </li>
           <li>
@@ -46,7 +46,7 @@ export const Footer = () => {
               color="blue-gray"
               className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
             >
-              Contact Us
+              Contato
             </Typography>
           </li>
         </ul>
