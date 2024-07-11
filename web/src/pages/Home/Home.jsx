@@ -69,6 +69,34 @@ export const LandingPage = () => {
                 <img src="..\src\assets\LOGOVETO.svg" className="h-48 w-auto" />
               </div>
             </div>
+            <div className="flex-col w-auto">
+              <div className="justify-center">
+                <h2 className="text-4xl font-bold tracking-tight text-gray-300 sm:text-6xl text-center">
+                  Quais cursos oferecemos?
+                </h2>
+              </div>
+              <div className="flex">
+                <div>
+                  <div>
+                    <p className="mt-4 text-lg leading-8 text-gray-300 text-justify">
+                      Cursos básicos e profissionalizantes de tecnologia e
+                      empreendedorismo
+                    </p>
+                  </div>
+                  <div className="text-gray-300">
+                    <button className="mt-4 border border-gray-700 rounded-lg px-4 hover:bg-gray-700">
+                      Ver mais detalhes
+                    </button>
+                  </div>
+                </div>
+                <div className="mt-4 grid grid-cols-4 gap-4">
+                  <div className="bg-gray-200 h-24 w-24"></div>
+                  <div className="bg-gray-200 h-24 w-24"></div>
+                  <div className="bg-gray-200 h-24 w-24"></div>
+                  <div className="bg-gray-200 h-24 w-24"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="bg-gray-200 py-24 sm:py-32">
