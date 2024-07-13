@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar } from "../../components/navbar";
 import { Footer } from "../../components/footer";
+import { Carousel } from "@material-tailwind/react";
 
 const stats = [
   { id: 1, name: "Profissionalmente capacitadas", value: "+ 200 pessoas" },
@@ -57,7 +58,7 @@ export const LandingPage = () => {
                   diretamente a grandes empresas para acesso a empregos dignos e
                   promovendo um crescimento profissional significativo.
                 </p>
-                <div className="">
+                <div>
                   <div className="gap-x-8 gap-y-6 text-base font-semibold leading-7 text-gray-300 flex justify-center">
                     <button className="mt-4 border border-gray-700 rounded-lg px-4 hover:bg-gray-700">
                       Saiba mais
@@ -69,14 +70,14 @@ export const LandingPage = () => {
                 <img src="..\src\assets\LOGOVETO.svg" className="h-48 w-auto" />
               </div>
             </div>
-            <div className="flex-col w-auto">
+            <div className="flex-col w-full">
               <div className="justify-center">
                 <h2 className="text-4xl font-bold tracking-tight text-gray-300 sm:text-6xl text-center">
                   Quais cursos oferecemos?
                 </h2>
               </div>
               <div className="flex">
-                <div>
+                <div className="basis-1/4 ml-16">
                   <div>
                     <p className="mt-4 text-lg leading-8 text-gray-300 text-justify">
                       Cursos básicos e profissionalizantes de tecnologia e
@@ -89,11 +90,18 @@ export const LandingPage = () => {
                     </button>
                   </div>
                 </div>
-                <div className="mt-4 grid grid-cols-4 gap-4">
-                  <div className="bg-gray-200 h-24 w-24"></div>
-                  <div className="bg-gray-200 h-24 w-24"></div>
-                  <div className="bg-gray-200 h-24 w-24"></div>
-                  <div className="bg-gray-200 h-24 w-24"></div>
+                <div className="basis-3/4 mt-4 mr-16 pl-16">
+                  <Carousel className="grid grid-cols-9 gap-4">
+                    <div className="bg-gray-200 h-24 w-24"></div>
+                    <div className="bg-yellow-400 h-24 w-24"></div>
+                    <div className="bg-gray-200 h-24 w-24"></div>
+                    <div className="bg-gray-200 h-24 w-24"></div>
+                    <div className="bg-gray-200 h-24 w-24"></div>
+                    <div className="bg-gray-200 h-24 w-24"></div>
+                    <div className="bg-gray-200 h-24 w-24"></div>
+                    <div className="bg-gray-200 h-24 w-24"></div>
+                    <div className="bg-gray-200 h-24 w-24"></div>
+                  </Carousel>
                 </div>
               </div>
             </div>
