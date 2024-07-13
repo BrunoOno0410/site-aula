@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { CreateAccountPage } from "./pages/Login/CreateAccount";
 import { ForgotPasswordPage } from "./pages/Login/ForgotPassword";
 import { CoursesList } from "./pages/Aulas/CoursesList";
+import { AboutUs } from "./pages/SobreNos/AboutUs";
 import { ClassesModel } from "./pages/Aulas/cursos/ClassesModel";
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/aulas",
     element: <CoursesList />,
+  },
+  {
+    path: "/aboutUs",
+    element: <AboutUs />,
   },
   {
     path: "/modelo",
