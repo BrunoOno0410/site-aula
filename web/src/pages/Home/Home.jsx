@@ -1,7 +1,9 @@
 import React from "react";
 import { Navbar } from "../../components/navbar";
 import { Footer } from "../../components/footer";
-import { Carousel } from "@material-tailwind/react";
+// import { Carousel } from "@material-tailwind/react";
+import { Carousel } from "../../components/Carousel";
+import { Link } from "react-router-dom";
 
 const stats = [
   { id: 1, name: "Profissionalmente capacitadas", value: "+ 200 pessoas" },
@@ -50,7 +52,7 @@ export const LandingPage = () => {
                 <h2 className="text-4xl font-bold tracking-tight text-gray-300 sm:text-6xl text-center">
                   Quem somos nós?
                 </h2>
-                <p className="mt-4 text-lg leading-8 text-gray-300 text-justify">
+                <p className="mt-4 text-2xl leading-8 text-gray-300 text-justify">
                   Nosso compromisso com a educação de qualidade é refletido
                   neste projeto, que busca promover o letramento digital em
                   regiões vulneráveis. Capacitamos indivíduos através de
@@ -60,9 +62,12 @@ export const LandingPage = () => {
                 </p>
                 <div>
                   <div className="gap-x-8 gap-y-6 text-base font-semibold leading-7 text-gray-300 flex justify-center">
-                    <button className="mt-4 border border-gray-700 rounded-lg px-4 hover:bg-gray-700">
+                    <Link
+                      to="/aboutUs"
+                      className="mt-4 text-xl border border-gray-700 rounded-lg px-4 hover:bg-gray-700"
+                    >
                       Saiba mais
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -70,39 +75,65 @@ export const LandingPage = () => {
                 <img src="..\src\assets\LOGOVETO.svg" className="h-48 w-auto" />
               </div>
             </div>
-            <div className="flex-col w-full">
+            <div className="flex-col w-full mt-32">
               <div className="justify-center">
                 <h2 className="text-4xl font-bold tracking-tight text-gray-300 sm:text-6xl text-center">
                   Quais cursos oferecemos?
                 </h2>
               </div>
-              <div className="flex">
+              <div className="flex mt-16">
                 <div className="basis-1/4 ml-16">
-                  <div>
-                    <p className="mt-4 text-lg leading-8 text-gray-300 text-justify">
-                      Cursos básicos e profissionalizantes de tecnologia e
-                      empreendedorismo
-                    </p>
-                  </div>
+                  <p className="text-2xl leading-8 text-gray-300 text-left">
+                    Cursos básicos e profissionalizantes de tecnologia e
+                    empreendedorismo
+                  </p>
                   <div className="text-gray-300">
-                    <button className="mt-4 border border-gray-700 rounded-lg px-4 hover:bg-gray-700">
+                    <button className="mt-4 text-xl border border-gray-700 rounded-lg px-4 hover:bg-gray-700">
                       Ver mais detalhes
                     </button>
                   </div>
                 </div>
-                <div className="basis-3/4 mt-4 mr-16 pl-16">
-                  <Carousel className="grid grid-cols-9 gap-4">
-                    <div className="bg-gray-200 h-24 w-24"></div>
-                    <div className="bg-yellow-400 h-24 w-24"></div>
-                    <div className="bg-gray-200 h-24 w-24"></div>
-                    <div className="bg-gray-200 h-24 w-24"></div>
-                    <div className="bg-gray-200 h-24 w-24"></div>
-                    <div className="bg-gray-200 h-24 w-24"></div>
-                    <div className="bg-gray-200 h-24 w-24"></div>
-                    <div className="bg-gray-200 h-24 w-24"></div>
-                    <div className="bg-gray-200 h-24 w-24"></div>
-                  </Carousel>
-                </div>
+                <Carousel/>
+                {/* <div className="pl-16">
+                  <div className="flex flex-wrap gap-4">
+                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
+                      <img src="..\src\assets\Drive.png"/>
+                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Google Drive</p>
+                    </div>
+                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
+                      <img src="..\src\assets\Docx.png"/>
+                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Google Docs</p>
+                    </div>
+                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
+                      <img src="..\src\assets\Gmail.png"/>
+                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Gmail</p>
+                    </div>
+                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
+                      <img src="..\src\assets\Planilhas.png"/>
+                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Google Planilhas</p>
+                    </div>
+                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
+                      <img src="..\src\assets\Apresentações.png"/>
+                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Google Apresentações</p>
+                    </div>
+                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
+                      <img src="..\src\assets\Classroom.png"/>
+                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Google Classroom</p>
+                    </div>
+                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
+                      <img src="..\src\assets\Segurança.png"/>
+                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Segurança e Tecnologia</p>
+                    </div>
+                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
+                      <img src="..\src\assets\Excel.png"/>
+                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Excel Iniciante</p>
+                    </div>
+                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
+                      <img src="..\src\assets\Excel.png"/>
+                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Excel Intermediário</p>
+                    </div>
+                  </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -57,7 +57,7 @@ export const AboutUs = () => {
               <img src="..\src\assets\LOGOVETO.svg" className="h-60 row-span-3" />
               <p className="mt-4 text-xl leading-8 text-gray-300 row-span-2 pt-24 pr-60 font-bold">Tecnologia</p>
               <p className="mt-4 text-xl leading-8 text-gray-300 pl-60 font-bold">União</p>
-              <p className="mt-4 text-xl leading-8 text-gray-300 pr-60 font-bold">Enactus</p>
+              <a class="mt-4 text-xl leading-8 text-gray-300 pr-60 font-bold hover:text-white" href="https://enactus.org.br/" target="_blank">Enactus</a>
             </div>
             <p className="mt-16 text-xl leading-8 text-gray-300 text-center mx-80">
             Tecnus vem da junção das palavras: Tecnologia + us (nós em inglês), ou seja tecnus significa a tecnologia que nos une. <br></br>
