@@ -6,9 +6,9 @@ import { Carousel } from "../../components/Carousel";
 import { Link } from "react-router-dom";
 
 const stats = [
-  { id: 1, name: "Profissionalmente capacitadas", value: "+ 200 pessoas" },
-  { id: 2, name: "Certificados de cursos emitidos", value: "+ 1000" },
-  { id: 3, name: "Contratados por empresas parceiras", value: "25 alunos" },
+  { id: 1, name: "Vidas impactadas", value: "+ 390 alunos" },
+  { id: 2, name: "Certificados emitidos", value: "+ 200" },
+  { id: 3, name: "Comunidades atendidas", value: "4" },
 ];
 
 export const LandingPage = () => {
@@ -94,46 +94,6 @@ export const LandingPage = () => {
                   </div>
                 </div>
                 <Carousel/>
-                {/* <div className="pl-16">
-                  <div className="flex flex-wrap gap-4">
-                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
-                      <img src="..\src\assets\Drive.png"/>
-                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Google Drive</p>
-                    </div>
-                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
-                      <img src="..\src\assets\Docx.png"/>
-                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Google Docs</p>
-                    </div>
-                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
-                      <img src="..\src\assets\Gmail.png"/>
-                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Gmail</p>
-                    </div>
-                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
-                      <img src="..\src\assets\Planilhas.png"/>
-                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Google Planilhas</p>
-                    </div>
-                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
-                      <img src="..\src\assets\Apresentações.png"/>
-                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Google Apresentações</p>
-                    </div>
-                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
-                      <img src="..\src\assets\Classroom.png"/>
-                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Google Classroom</p>
-                    </div>
-                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
-                      <img src="..\src\assets\Segurança.png"/>
-                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Segurança e Tecnologia</p>
-                    </div>
-                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
-                      <img src="..\src\assets\Excel.png"/>
-                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Excel Iniciante</p>
-                    </div>
-                    <div className="bg-neutral-700 border-gray-300 border-4 h-60 w-60 rounded-lg flex flex-col items-center justify-center">
-                      <img src="..\src\assets\Excel.png"/>
-                      <p className="text-xl font-medium leading-8 text-gray-300 text-center">Excel Intermediário</p>
-                    </div>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
@@ -164,40 +124,22 @@ export const LandingPage = () => {
             <figure className="mt-10">
               <blockquote className="text-center text-xl font-semibold leading-8 text-gray-300 sm:text-2xl sm:leading-9">
                 <p>
-                  "Eu estava procurando uma maneira fácil de melhorar minhas
-                  habilidades digitais quando encontrei o site de letramento
-                  digital. Fiquei impressionada com a variedade de recursos
-                  disponíveis e como eles eram fáceis de entender. Os tutoriais
-                  passo a passo realmente me ajudaram a ganhar confiança ao usar
-                  o computador e a internet. Agora, estou mais confortável
-                  navegando online, enviando e-mails e até mesmo participando de
-                  cursos online. Recomendo este site para qualquer pessoa que
-                  queira melhorar suas habilidades digitais de forma acessível e
-                  eficaz."
+                  Desde o segundo semestre de 2023, o Projeto Tecnus Saturn passou 
+                  por um período de reformulação, sendo repensado para melhor atender 
+                  nossos alunos. Durante essa fase, tivemos pouco contato com novas 
+                  e antigas comunidades.
+
+                  Atualmente, com o projeto renovado, estamos entusiasmados em 
+                  anunciar nossa parceria com a comunidade do Núcleo Recanto e a 
+                  OSC Alecrim em Flor. As aulas terão início no segundo semestre de 
+                  2024 e estamos ansiosos para impactar ainda mais vidas com nossas 
+                  novas aulas de tecnologia.
+
+                  Nosso objetivo é proporcionar conhecimentos tecnológicos que 
+                  capacitem nossos alunos, promovendo inclusão digital e oportunidades 
+                  de desenvolvimento pessoal e profissional.
                 </p>
               </blockquote>
-              <figcaption className="mt-10">
-                <img
-                  className="mx-auto h-24 w-24 rounded-full"
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt=""
-                />
-                <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-                  <div className="font-semibold text-gray-300">
-                    Judith Black
-                  </div>
-                  <svg
-                    viewBox="0 0 2 2"
-                    width={3}
-                    height={3}
-                    aria-hidden="true"
-                    className="fill-gray-900"
-                  >
-                    <circle cx={1} cy={1} r={1} />
-                  </svg>
-                  <div className="text-white">CEO of Workcation</div>
-                </div>
-              </figcaption>
             </figure>
           </div>
         </section>
